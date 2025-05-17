@@ -6,13 +6,8 @@ date: 2025/05/17
 date-format: long
 format: 
   html:
-    theme: Lumen
-    resources: 
-      - shinylive-sw.js
-project:
-  type: website
-filters:
-  - shinylive
+    toc: true
+    code-fold: true
 ---
 
 ## Quarto
