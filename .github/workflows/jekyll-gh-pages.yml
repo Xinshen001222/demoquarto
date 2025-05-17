@@ -29,15 +29,15 @@ jobs:
       - name: "Setup R dependencies for Quarto's knitr engine"
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          packages:
-            any::knitr
-            any::rmarkdown
-            any::downlit
-            any::xml2
-
-      - name: "Install specific shinylive version"
-        run: |
-          R -e "remotes::install_version('shinylive', version='0.3.0.9000')"
+          packages: |
+            # 从 GitHub 安装特定版本
+            git::https://github.com/posit-dev/r-shinylive
+            knitr
+            rmarkdown
+            downlit
+            xml2
+            # 确保 remotes 包已安装
+            remotes
 
       - name: "Set up Quarto"
         uses: quarto-dev/quarto-actions/setup@v2
@@ -56,7 +56,7 @@ jobs:
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: _site  # 确保路径正确
+          path: _site
           retention-days: 1
       
       - name: Deploy to GitHub Pages
