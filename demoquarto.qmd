@@ -11,8 +11,6 @@ format:
       - shinylive-sw.js
 project:
   type: website
-  output-dir: "docs" 
-  execute-dir: project 
 filters:
   - shinylive
 ---
