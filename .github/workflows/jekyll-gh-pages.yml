@@ -30,13 +30,11 @@ jobs:
         uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: |
-            # 从 GitHub 安装特定版本
             git::https://github.com/posit-dev/r-shinylive
             knitr
             rmarkdown
             downlit
             xml2
-            # 确保 remotes 包已安装
             remotes
 
       - name: "Set up Quarto"
