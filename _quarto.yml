@@ -1,5 +1,17 @@
 project:
   title: "demoquarto"
+  type: website
+  output-dir: _site  # 关键配置
 
-editor: visual
+format:
+  html:
+    theme: lumen  # 注意主题名全小写
+    css: 
+      - shinylive-quarto.css
+    resources:
+      - shinylive-sw.js
+    include-after-body: 
+      - load-shinylive-sw.html
 
+filters:
+  - shinylive
